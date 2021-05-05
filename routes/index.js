@@ -10,6 +10,8 @@ console.log("Router Loaded");
 //accesing controller
 router.get('/',homeController.home);
 
+router.use('/users',require('./users'));
+
 
 //to enable its usage in other files probably server index.js
 module.exports = router;
