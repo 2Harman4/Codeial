@@ -4,6 +4,19 @@ const app = express();
 //by default websites run on port:80
 const port = 8000;
 
+
+//defining a path to lookout for static files
+app.use(express.static('./assets'));
+
+//including layouts library
+const expressLayouts = require('express-ejs-layouts');
+//layout should be implemented before any other view
+app.use(expressLayouts);
+
+//extract styles and scripts from subpages into the layout
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
+
 //use express router
 app.use('/',require('./routes/index'));
 
