@@ -1,9 +1,18 @@
 const express = require('express');
+//importing cookie parser
+const cookieParser = require('cookie-parser');
 //create server
 const app = express();
 //by default websites run on port:80
 const port = 8000;
+//importing database configuration
+const db = require('./config/mongoose');
 
+//parser to read form data
+app.use(express.urlencoded());
+
+//cookie parser
+app.use(cookieParser());
 
 //defining a path to lookout for static files
 app.use(express.static('./assets'));
