@@ -13,6 +13,12 @@ router.get('/sign-up',usersController.signUp);
 router.get('/sign-in',usersController.signIn);
 
 //route for new user creation 
-router.post('/create',usersController.create);
+router.post('/create-user',usersController.create);
+
+//route for user sign in
+router.post('/create-session',usersController.createSession);
+
+//route for sign-out
+router.get('/sign-out',usersController.signOut);
 
 module.exports = router;
