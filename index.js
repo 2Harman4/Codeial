@@ -8,6 +8,14 @@ const port = 8000;
 //importing database configuration
 const db = require('./config/mongoose');
 
+//used for session cookie
+const session = require('express-session');
+//importing passport and strategy
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+//connect-mongo
+const MongoStore = require('connect-mongo')(session);
+
 //parser to read form data
 app.use(express.urlencoded());
 
@@ -26,14 +34,42 @@ app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
-//use express router
-app.use('/',require('./routes/index'));
+
 
 //setting view engine
 app.set('view engine','ejs')
 
 //path of views
 app.set('views','./views');
+
+//MongoStore is used to store the session cookie in db
+app.use(session({
+    name: 'codeial',
+    //change the secret before deployment in production mode
+    secret: 'blahsomething',
+    saveUninitialized:false,
+    resave: false,
+    cookie:{
+        maxAge: (1000 * 60 * 100)//100 minutes
+    },
+    store: new MongoStore(
+        {
+            mongooseConnection : db,
+            autoRemove: 'disable'
+        },
+        function(err){
+            console.log(err || 'connect-mongodb setup ok');
+        }
+    )
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
+
+//use express router
+app.use('/',require('./routes/index'));
 
 app.listen(port,function(err){
     if(err){

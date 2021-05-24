@@ -9,6 +9,11 @@ module.exports.profile = function(req,res){
 
 //render the sign up page
 module.exports.signUp = function(req,res){
+
+    if(req.isAuthenticated()){
+       return res.redirect('/users/profile');
+    }
+
     return res.render('user_sign_up',{
         title: 'CODEIAL | Sign Up'
     });
@@ -16,6 +21,11 @@ module.exports.signUp = function(req,res){
 
 //render the sign in page
 module.exports.signIn = function(req,res){
+
+    if(req.isAuthenticated()){
+       return res.redirect('/users/profile');
+    }
+
     return res.render('user_sign_in',{
         title: 'CODEIAL | Sign In'
     });
@@ -56,7 +66,17 @@ module.exports.create = function (req,res){
     });
 };
 
+//handled by passport.js local strategy
+
 //sign in and create a session for the user
 module.exports.createSession = function(req,res){
-    //later
-};
+    return res.redirect('/');
+}
+
+//sign out and destroy the session
+module.exports.destorySession = function(req,res){
+    //function given by passport
+    req.logout();
+    //to the homepage
+    return res.redirect('/');
+}
