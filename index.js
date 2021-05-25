@@ -16,6 +16,20 @@ const passportLocal = require('./config/passport-local-strategy');
 //connect-mongo
 const MongoStore = require('connect-mongo')(session);
 
+// importing sass middleware
+const sassMiddleware = require('node-sass-middleware');
+
+
+
+app.use(sassMiddleware({
+    src:'./assets/scss',
+    dest:'./assets/css',
+    //change debug to false in production mode
+    debug: true,
+    outputStyle: 'extended',
+    prefix:'/css'
+}));
+
 //parser to read form data
 app.use(express.urlencoded());
 

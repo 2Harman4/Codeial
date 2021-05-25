@@ -1,0 +1,47 @@
+// variables
+$header-color: #14213d;
+$header-font-size: 1.5rem;
+$header-text-color:white;
+$header-padding: .8%;
+
+header{
+    
+    display: flex;
+    justify-content: space-between;
+    background-color: $header-color;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    padding: $header-padding;
+    border-bottom: 5px solid white;
+
+    #logo{
+        color: white;
+        font-size: 2rem;
+    }
+
+    ul {
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 2%;
+
+        li {
+            font-size: $header-font-size;
+            color: $header-text-color;
+            transition: background-color ease-in-out .3s;
+        }
+
+        li:hover {
+           background-color: #fca311;
+        }
+    }
+
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+}

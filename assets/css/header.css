@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #14213d;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  padding: 0.8%;
+  border-bottom: 5px solid white; }
+  header #logo {
+    color: white;
+    font-size: 2rem; }
+  header ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 2%; }
+    header ul li {
+      font-size: 1.5rem;
+      color: white;
+      transition: background-color ease-in-out .3s; }
+    header ul li:hover {
+      background-color: #fca311; }
+  header a {
+    color: inherit;
+    text-decoration: none; }

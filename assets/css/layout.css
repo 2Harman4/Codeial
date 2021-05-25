@@ -1,5 +1,13 @@
-body{
-    margin: 0;
+html {
+  font-size: 16px; }
 
-    background-color: lightcoral;
-}
+body {
+  margin: 0; }
+  body #layout-main {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+    background-color: #fca311; }

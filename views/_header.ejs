@@ -1,26 +1,26 @@
 <header>
-    Page Header
+    <span id="logo"><a href="/">CODEIAL LOGO</a></span>
 
     <ul>
         <!-- if user data is present in locals -->
         <% if (locals.user){ %>
             <li>
                 <a href="/users/profile">
-                    <%= user.name %>
+                    <%= user.name %> &nbsp; &nbsp;
                 </a>
             </li>
 
             <li>
-                <a href="/users/sign-out">Sign Out</a>
+                <a href="/users/sign-out">Sign Out &nbsp;</a>
             </li>
         <%} else {%>
             <!-- if user data isn't present in locals -->
             <li>
-                <a href="/users/sign-In">Sign In</a>
+                <a href="/users/sign-In">Sign In &nbsp; &nbsp;</a>
             </li>
 
             <li>
-                <a href="/users/sign-up">Sign Up</a>
+                <a href="/users/sign-up">Sign Up &nbsp;</a>
             </li>
         <%}%>
     </ul>

@@ -1,0 +1,67 @@
+//variables
+$box-color: #e5e5e5;
+$button-color: #14213d;
+
+
+//to be made
+.website-info{
+    width: 40%;
+}
+
+//the whole container  
+.sign-in-up-box{
+    
+    width: 30%;
+    height: 60%;
+    border-radius: 5%;
+    background-color: $box-color;
+    box-shadow: #a86d0d 0px 0px 8px 5px;
+    transition: all .5s linear;
+    
+    //form can be sign up or sign 
+    form{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s linear;
+
+        //all input elements
+        input{
+            width: 90%;
+            height: 12%;
+            margin: 1% 0%;
+            border: none;
+            transition: all .5s linear;
+        }
+        //giving shadow effect on hover
+        input:hover{
+            cursor: pointer;
+            box-shadow: grey 1px 1px 4px 2px;
+            transition: all .2s linear;
+        }
+        //when inputting
+        input:focus{
+            outline: none;
+            box-shadow: grey 1px 1px 4px 2px;
+        }
+        //last child is submit button
+        :last-child{
+            background-color: $button-color;
+            color: white;
+            font-size: 2rem;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20%;
+        }
+
+        :last-child:hover{
+            background-color: navy;
+            cursor: pointer;
+            box-shadow: grey 1px 1px 4px 2px;
+            transition: all .9s linear;
+        }
+    }
+}
