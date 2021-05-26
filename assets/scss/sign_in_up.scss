@@ -1,22 +1,46 @@
 //variables
+$website-info-font-size:3rem;
+
+$website-info-width: 500px;
+$website-info-height: 450px;
+
+
 $box-color: #e5e5e5;
-$button-color: #14213d;
+$sign-button-color: #14213d;
+$box-width:400px;
+$box-height: 450px;
+$input-font-size:1rem;
+$submit-font-size:1.5rem;
 
 
 //to be made
 .website-info{
-    width: 40%;
+ 
+    height: $website-info-height;
+    width: $website-info-width;
+    
+    margin:1%;
+    
+    border: white 5px solid;
+    color: black;
+    font-size: $website-info-font-size;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 //the whole container  
 .sign-in-up-box{
     
-    width: 30%;
-    height: 60%;
+    width: $box-width;
+    height: $box-height;
     border-radius: 5%;
     background-color: $box-color;
     box-shadow: #a86d0d 0px 0px 8px 5px;
-    transition: all .5s linear;
+    margin: 1%;
+  
+
     
     //form can be sign up or sign 
     form{
@@ -34,7 +58,9 @@ $button-color: #14213d;
             height: 12%;
             margin: 1% 0%;
             border: none;
-            transition: all .5s linear;
+            font-size: $input-font-size;
+            padding-left: 2%;
+
         }
         //giving shadow effect on hover
         input:hover{
@@ -49,9 +75,9 @@ $button-color: #14213d;
         }
         //last child is submit button
         :last-child{
-            background-color: $button-color;
+            background-color: $sign-button-color;
             color: white;
-            font-size: 2rem;
+            font-size: $submit-font-size;
             border: none;
             border-radius: 10px;
             margin-top: 20%;

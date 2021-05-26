@@ -6,21 +6,21 @@
         <% if (locals.user){ %>
             <li>
                 <a href="/users/profile">
-                    <%= user.name %> &nbsp; &nbsp;
+                    <i class="fas fa-user-tie"></i> &nbsp; 
                 </a>
             </li>
 
             <li>
-                <a href="/users/sign-out">Sign Out &nbsp;</a>
+                <a href="/users/sign-out">Sign Out </a>
             </li>
         <%} else {%>
             <!-- if user data isn't present in locals -->
             <li>
-                <a href="/users/sign-In">Sign In &nbsp; &nbsp;</a>
+                <a href="/users/sign-In">Sign In &nbsp; </a>
             </li>
 
             <li>
-                <a href="/users/sign-up">Sign Up &nbsp;</a>
+                <a href="/users/sign-up">Sign Up</a>
             </li>
         <%}%>
     </ul>

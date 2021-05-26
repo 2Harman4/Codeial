@@ -1,10 +1,12 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #14213d;
   position: fixed;
   z-index: 100;
   width: 100%;
+  height: 40px;
   padding: 0.8%;
   border-bottom: 5px solid white; }
   header #logo {
@@ -18,11 +20,13 @@ header {
     align-items: center;
     padding-right: 2%; }
     header ul li {
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: white;
       transition: background-color ease-in-out .3s; }
+      header ul li .fa-user-tie {
+        font-size: 2rem; }
     header ul li:hover {
-      background-color: #fca311; }
+      color: #fca311; }
   header a {
     color: inherit;
     text-decoration: none; }

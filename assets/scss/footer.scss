@@ -1,6 +1,7 @@
 //variables
 $footer-color: #14213d;
 $footer-text-color : whitesmoke;
+$footer-height: 100px;
 
 footer{
     height: 15vh;
@@ -10,8 +11,10 @@ footer{
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
+    height: $footer-height;
     position: relative;
     z-index: 100;
+    border-top: 5px solid white;
 
     a{
         color: inherit;

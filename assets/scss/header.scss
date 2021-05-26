@@ -1,17 +1,21 @@
 // variables
 $header-color: #14213d;
-$header-font-size: 1.5rem;
+$header-font-size: 1rem;
 $header-text-color:white;
 $header-padding: .8%;
+$header-height: 40px;
 
 header{
     
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: $header-color;
     position: fixed;
     z-index: 100;
     width: 100%;
+    height: $header-height;
+    // min-height: $header-min-height;
     padding: $header-padding;
     border-bottom: 5px solid white;
 
@@ -32,10 +36,14 @@ header{
             font-size: $header-font-size;
             color: $header-text-color;
             transition: background-color ease-in-out .3s;
+
+            .fa-user-tie{
+                font-size: 2rem;
+            }
         }
 
         li:hover {
-           background-color: #fca311;
+           color: #fca311;
         }
     }
 

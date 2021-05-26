@@ -1,0 +1,30 @@
+/* for laptops 1024px or less width */
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 14px; }
+  body #layout-main .website-info {
+    width: 450px;
+    height: 405px;
+    margin: 3%; }
+  body #layout-main .sign-in-up-box {
+    width: 380px;
+    height: 405px;
+    margin: 3%; } }
+
+/* If the screen size is TABLETS 768px or less,*/
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 12px; }
+  body #layout-main .website-info {
+    height: 350px;
+    margin: 7%; }
+  body #layout-main .sign-in-up-box {
+    height: 350px;
+    margin: 5%; } }
+
+/* for large mobile screens or less ,*/
+@media only screen and (max-width: 425px) {
+  body header #logo {
+    font-size: 1.5rem; }
+  body #layout-main .website-info {
+    display: none; } }
