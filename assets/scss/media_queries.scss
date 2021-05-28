@@ -1,6 +1,6 @@
 //for laptops L 1440px created orginally
 
-/* for laptops 1024px or less width */
+/* for laptops 1024px or less width --------------------------------------------*/
 @media only screen and (max-width: 1024px) {
     html {
       font-size: 14px;
@@ -10,70 +10,145 @@
 
         #layout-main{
 
+            //styling on unlogged homepage and sign-in/up
             .website-info{
                 width: 450px;
                 height: 405px;
                 margin: 3%;
 
             }
-            
             .sign-in-up-box{
-    
                 width: 380px ;
                 height: 405px ;
                 margin: 3%;
-            }  
+            }
+            
+            //logged in content styling
+            .content-container{
+                margin-top: -4% ;
 
-
+                //homepage
+                #feed-posts{
+                    //section displaying posts
+                    #posts-list-container{
+                        ul{
+                            li{
+                                margin-bottom: 3%;
+                                
+                            }
+                        }
+                    }
+                    
+                }
+            }
         }
 
     }
 }
   
-  /* If the screen size is TABLETS 768px or less,*/
+  /* If the screen size is TABLETS 768px or less,---------------------------*/
   @media only screen and (max-width: 768px) {
     html {
       font-size: 12px;
     }
 
     body{
-
+        //styling on unlogged homepage and sign-in/up
         #layout-main{
 
             .website-info{
                 height: 350px;
                 margin: 7%;
-
             }
-            
             .sign-in-up-box{
-    
                 height: 350px ;
                 margin: 5%;
             }  
 
+            //logged in styling
+            .content-container{
+                margin-top: -2.5% ;
 
+                //homepage
+                #feed-posts{
+                    //section displaying posts
+                    #posts-list-container{
+                        ul{
+                            li{
+                                margin-bottom: 4%;
+                                
+                            }
+                        }
+                    }
+                    
+                }
+            }
         }
-
     }
   }
 
-/* for large mobile screens or less ,*/
-@media only screen and (max-width: 425px) {
+/* for large mobile screens or less ,----------------------------------*/
+@media only screen and (max-width: 530px) {
+    
     body{
 
         header{
-        
             #logo{
                 font-size: 1.5rem;
             }
-        }
 
+            ul{
+                li{
+                    .right-options{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+        }
+        //styling on unlogged homepage and sign-in/up
         #layout-main{
 
             .website-info{
-                
                 display: none;
+            }
+
+            .sign-in-up-box{
+                width: 350px;
+                margin-top: 20%;
+            }
+
+            //logged in content-styling
+            .content-container{
+                margin-top:0%;
+
+                //global post style
+                .post-container{
+                    width: 100%;
+                    box-shadow: none;
+                    border-radius: 0;
+                    ;
+                }
+
+                //homepage
+                #feed-posts{
+                    width: 100%;
+
+                    //create post div
+                    #create-post{
+                        margin-top: 8%;
+
+                        #new-post-form{
+                            width: 90%;
+                        }
+                    }
+                }
+
+                //profile page
+                #profile-section{
+                    width: 100%;
+                }
+
             }
         }
     }

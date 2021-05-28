@@ -1,0 +1,52 @@
+.content-container #feed-posts {
+  width: 50%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .content-container #feed-posts .post-container {
+    width: 90%;
+    background-color: #e5e5e5;
+    box-shadow: #8b8b8b 0px 0px 5px 1px;
+    border-radius: 10px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .content-container #feed-posts #create-post {
+    margin-top: 5%;
+    background-color: crimson;
+    box-shadow: #141414 0px 0px 5px 1px; }
+    .content-container #feed-posts #create-post #new-post-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: 0; }
+      .content-container #feed-posts #create-post #new-post-form textarea {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 2px;
+        padding: 2%;
+        margin-bottom: 5%;
+        border-radius: 10px;
+        transition: ease-in-out .4s;
+        transition-property: min-height,border-radius; }
+      .content-container #feed-posts #create-post #new-post-form textarea:focus {
+        min-height: 150px; }
+      .content-container #feed-posts #create-post #new-post-form input {
+        width: 15%;
+        border-radius: 3px;
+        border: none;
+        background-color: white; }
+      .content-container #feed-posts #create-post #new-post-form input:hover {
+        box-shadow: #4d4d4d 0px 0px 3px 2px; }
+  .content-container #feed-posts #posts-list-container ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0; }
+    .content-container #feed-posts #posts-list-container ul li {
+      list-style: none;
+      margin-bottom: 2%; }

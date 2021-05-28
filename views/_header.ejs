@@ -5,13 +5,15 @@
         <!-- if user data is present in locals -->
         <% if (locals.user){ %>
             <li>
-                <a href="/users/profile">
-                    <i class="fas fa-user-tie"></i> &nbsp; 
+                <a href="/users/profile" >
+                    <i class="fas fa-user-tie right-options" ></i> &nbsp; &nbsp;
                 </a>
             </li>
 
             <li>
-                <a href="/users/sign-out">Sign Out </a>
+                <a href="/users/sign-out" >
+                    <i class="fas fa-sign-out-alt right-options" ></i> &nbsp;
+                </a>
             </li>
         <%} else {%>
             <!-- if user data isn't present in locals -->

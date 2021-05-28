@@ -1,8 +1,12 @@
 <link rel="stylesheet" href="/css/user_profile.css">
 
-<section id="profile-section">
-    <h1> Codeial / Profile Page </h1>
+<!-- this section is row flex , might contain 3 sub-sections later[ links on left , posts in center , friendlist on right] -->
+<section class="content-container">
+    <section id="profile-section">
+        <h1> Codeial / Profile Page </h1>
+    
+        <p><%= user.name %></p>
+        <p><%= user.email %></p>
+    </section>
 
-    <p><%= user.name %></p>
-    <p><%= user.email %></p>
 </section>

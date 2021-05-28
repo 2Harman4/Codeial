@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #14213d;
+  background-color: #14213df6;
   position: fixed;
   z-index: 100;
   width: 100%;
@@ -23,7 +23,7 @@ header {
       font-size: 1rem;
       color: white;
       transition: background-color ease-in-out .3s; }
-      header ul li .fa-user-tie {
+      header ul li .right-options {
         font-size: 2rem; }
     header ul li:hover {
       color: #fca311; }

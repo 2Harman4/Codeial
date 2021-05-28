@@ -1,5 +1,7 @@
 //variables
 $main-background-color:#fca311;
+$content-container-bg-color:#fca311; //same as layout-main-bg-color
+
 
 html{
     //controlling rem value
@@ -15,17 +17,30 @@ body{
         min-height: 100%;
         width: 100%;
 
-        padding-top: 5%;
+        padding-top: 10%;
 
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: center;
+        // align-items: center;
 
         position: relative;
         z-index: 50;
         background-color: $main-background-color;
+
+        //variable body global styling (except sign-in/up)
+        .content-container{
+            width: 100vw;
+            min-height: 100%;
+            background-color: $content-container-bg-color;
+            margin-top: -6%;
+        
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        
+        }
     }
 }
 

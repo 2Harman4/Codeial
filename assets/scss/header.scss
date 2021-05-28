@@ -1,5 +1,5 @@
 // variables
-$header-color: #14213d;
+$header-color: #14213df6;
 $header-font-size: 1rem;
 $header-text-color:white;
 $header-padding: .8%;
@@ -37,7 +37,7 @@ header{
             color: $header-text-color;
             transition: background-color ease-in-out .3s;
 
-            .fa-user-tie{
+            .right-options{
                 font-size: 2rem;
             }
         }
