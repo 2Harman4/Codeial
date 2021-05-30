@@ -7,7 +7,7 @@ const usersController = require('../controllers/users_controller');
 
 //profile page accesible only if signed in
 //used middleware for that
-router.get('/profile',passport.checkAuthentication,usersController.profile);
+router.get('/profile/:id',passport.checkAuthentication,usersController.profile);
 
 //route for sign up page
 router.get('/sign-up',usersController.signUp);

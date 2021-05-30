@@ -11,6 +11,8 @@ html{
 //contains header footer and variable body
 body{
     margin: 0;
+    
+    overflow-x: hidden;
 
     //body is variable
     #layout-main{

@@ -4,15 +4,15 @@
 <!-- this section is row flex , might contain 3 sub-sections later[ links on left , posts in center , friendlist on right] -->
 <section class="content-container">
 
-    <% if (locals.user) { %>
-        
-    <%}%>
+    <!-- this section1 contains all the links -->
+    <section id="links">
+        <!-- to be made soon -->
+    </section>
 
-    <!-- view for logged in users -->
-    <!-- personalised according to user -->
+    <!-- this section2 contains all the posts and create post facility -->
     <section id="feed-posts">
         
-        <!-- create post div -->
+        <!-- CREATE post div -->
         <!-- visible only if logged in -->
         <% if (locals.user) { %>
         
@@ -30,49 +30,24 @@
             <ul>
                 <% for( post of posts){ %>
 
-                    <li class="post-container">
-                        
-                        <!-- the post -->
-                        <%= post.user.name %>
-                        <br>
-                        <%= post.content %>
-                        <br>
-                        <%= post.updatedAt %>
-
-                        <!-- comment section -->
-                        <div class="post-comments">
-                            <!-- make comment only if logged in -->
-                            <% if (locals.user) { %>
-                                <form action="/comments/create" method="POST">
-                                    <input type="text" name="content" placeholder="Type Here to Add Comment" required>
-                                    <input type="hidden" name="post" value="<%= post._id%>">
-                                    <input type="submit" value="Add Comment">
-                                
-                                </form>  
-                            <%}%> 
-
-                            <!-- display comments -->
-                            <div class="post-comments-list">
-                                <ul id="post-comments-<%= post._id %>">
-                                    <% for (comment of post.comments){%>
-                                        <li>    
-                                            <%= comment.content %>
-                                            
-                                            <%= comment.user.name %>
-                                        </li>
-                                    <%}%>    
-                                </ul>
-
-                            </div>
-
-                        </div>
-                        
-
-                    </li>
+                    <%- include('./_posts.ejs') %>
+                   
                 <%}%>
             </ul>
         </div>
 
+    </section>
+
+    <!-- this section3 contains all of the users in list -->
+    <section id="user-friends">
+        <h4>Friends</h4>
+        <% for ( u of all_users){ %>
+            <p>
+                <a href="/users/profile/<%= u.id %>">
+                    <%= u.name %>
+                </a>
+            </p>
+        <%}%> 
     </section>
 
 </section>

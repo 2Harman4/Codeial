@@ -25,7 +25,7 @@ app.use(sassMiddleware({
     src:'./assets/scss',
     dest:'./assets/css',
     //change debug to false in production mode
-    debug: true,
+    debug: false,
     outputStyle: 'extended',
     prefix:'/css'
 }));

@@ -53,5 +53,9 @@
         margin-top: 8%; }
         body #layout-main .content-container #feed-posts #create-post #new-post-form {
           width: 90%; }
+    body #layout-main .content-container #links {
+      display: none; }
+    body #layout-main .content-container #user-friends {
+      display: none; }
     body #layout-main .content-container #profile-section {
       width: 100%; } }

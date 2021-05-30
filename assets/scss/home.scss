@@ -4,14 +4,25 @@ $feed-post-color: #ffffff;
 $feed-post-width: 50%; 
 $box-bg-color: #e5e5e5;
 
+$user-friends-width: 20%;
 
+$links-section-width:20%;
 
 .content-container{
 
-    //section containing posts
+    //section 1 contaning links
+    #links{
+        width: $links-section-width;
+    }
+
+    //section 2 containing posts
     #feed-posts{
         width: $feed-post-width;
         background-color: $feed-post-color;
+
+        :first-child{
+            margin-top: 5%;
+        }
         
         display: flex;
         flex-direction: column;
@@ -33,7 +44,7 @@ $box-bg-color: #e5e5e5;
         //rest styling in layout.css as .post-container
         //create post div
         #create-post{
-            margin-top: 5%;
+            
             background-color: crimson;
             box-shadow: rgb(20, 20, 20) 0px 0px 5px 1px;
             
@@ -80,8 +91,9 @@ $box-bg-color: #e5e5e5;
 
         //section displaying posts
         #posts-list-container{
+            width: 100%;
             ul{
-
+                
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -98,5 +110,11 @@ $box-bg-color: #e5e5e5;
         }
 
         
+    }
+
+    //section 3 containing friend list
+    #user-friends{
+        width: $user-friends-width;
+        height: 100%;
     }
 }
