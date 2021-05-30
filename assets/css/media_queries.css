@@ -3,12 +3,12 @@
   html {
     font-size: 14px; }
   body #layout-main .website-info {
-    width: 450px;
-    height: 405px;
+    width: 420px;
+    height: 400px;
     margin: 3%; }
   body #layout-main .sign-in-up-box {
-    width: 380px;
-    height: 405px;
+    width: 350px;
+    height: 400px;
     margin: 3%; }
   body #layout-main .content-container {
     margin-top: -4%; }
@@ -20,8 +20,9 @@
   html {
     font-size: 12px; }
   body #layout-main .website-info {
-    height: 350px;
-    margin: 7%; }
+    height: 70vh;
+    width: 80vw;
+    margin: 5%; }
   body #layout-main .sign-in-up-box {
     height: 350px;
     margin: 5%; }
