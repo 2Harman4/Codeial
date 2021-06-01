@@ -47,7 +47,8 @@
       .content-container #feed-posts #create-post #new-post-form input:hover {
         background-color: rgba(255, 255, 255, 0.568); }
   .content-container #feed-posts #posts-list-container {
-    width: 100%; }
+    width: 100%;
+    margin-top: 5%; }
     .content-container #feed-posts #posts-list-container ul.unordered-list-container {
       width: 100%;
       display: flex;
