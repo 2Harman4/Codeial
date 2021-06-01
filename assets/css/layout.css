@@ -9,7 +9,13 @@ a, p {
 
 body {
   margin: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
+  body #flash-message {
+    position: fixed;
+    background-color: blue;
+    z-index: 105;
+    left: 0; }
   body #layout-main {
     min-height: 100%;
     width: 100%;

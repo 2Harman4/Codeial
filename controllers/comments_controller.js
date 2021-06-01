@@ -20,10 +20,11 @@ module.exports.create = async function(req,res){
         post.comments.push(comment);
         post.save();//the update saved to db from ram
 
-         return res.redirect('/');
+        req.flash('success','Comment posted!');
+        return res.redirect('/');
         
     }catch(err){
-        console.log("Error: ",err);
+        req.flash('error',err);
         return;
     }
     
@@ -44,14 +45,16 @@ module.exports.destroy = async function(req,res){
    
             //delete comment
             comment.remove();
+            req.flash('success','Comment Deleted!');
             return res.redirect('back');
                 
         }else{
+            req.flash('error','Unauthorised Action');
             return res.redirect('back');
         }
 
     }catch(err){
-        console.log("Error: ",err);
+        req.flash('error',err);
         return;
     }
     

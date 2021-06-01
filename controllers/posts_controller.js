@@ -7,10 +7,10 @@ module.exports.create = function(req,res){
         user: req.user._id
     },function(err,post){
         if(err){
-            console.log("error in creating the post");
+            req.flash('error',err);
             return;
         }
-
+        req.flash('success','Post Created!');
         return res.redirect('back');
     });
 }
@@ -30,15 +30,17 @@ module.exports.destroy = async function(req,res){
             post.remove();
             //deleting its comments from db
             await Comment.deleteMany({post: post.id});
+            req.flash('success','Post Deleted!');
             return res.redirect('back');
             
         }else{
+            req.flash('error','Unauthorised Action');
             return res.redirect('back');
         }
         
 
     }catch(err){
-        console.log("Error: ",err);
+        req.flash('error',err);
         return;
     }
 

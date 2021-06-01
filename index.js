@@ -1,25 +1,15 @@
 const express = require('express');
-//importing cookie parser
 const cookieParser = require('cookie-parser');
-//create server
 const app = express();
-//by default websites run on port:80
 const port = 8000;
-//importing database configuration
 const db = require('./config/mongoose');
-
-//used for session cookie
 const session = require('express-session');
-//importing passport and strategy
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
-//connect-mongo
 const MongoStore = require('connect-mongo')(session);
-
-// importing sass middleware
 const sassMiddleware = require('node-sass-middleware');
-
-
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 app.use(sassMiddleware({
     src:'./assets/scss',
@@ -81,6 +71,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
+
+//for flash messages
+app.use(flash());
+app.use(customMware.setFlash);
 
 //use express router
 app.use('/',require('./routes/index'));
