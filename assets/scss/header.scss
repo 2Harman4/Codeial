@@ -13,7 +13,7 @@ header{
     background-color: $header-color;
     position: fixed;
     z-index: 100;
-    width: 100%;
+    width: 100vw;
     height: $header-height;
     // min-height: $header-min-height;
     padding: $header-padding;

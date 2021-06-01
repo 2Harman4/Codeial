@@ -1,11 +1,16 @@
 //variables
 $main-background-color:#fca311;
-$content-container-bg-color:#fca311; //same as layout-main-bg-color
-
 
 html{
     //controlling rem value
     font-size: 16px;
+}
+
+a,p{
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 //contains header footer and variable body
@@ -34,8 +39,8 @@ body{
         //variable body global styling (except sign-in/up)
         .content-container{
             width: 100vw;
-            min-height: 100%;
-            background-color: $content-container-bg-color;
+            min-height: 100vh;
+            
             margin-top: -6%;
         
             display: flex;

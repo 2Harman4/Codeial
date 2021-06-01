@@ -33,7 +33,7 @@
                     #posts-list-container{
                         ul{
                             li{
-                                margin-bottom: 3%;
+                                margin-bottom: 6%;
                                 
                             }
                         }
@@ -76,9 +76,25 @@
                     #posts-list-container{
                         ul{
                             li{
-                                margin-bottom: 4%;
+                                margin-bottom: 8%;
                                 
                             }
+                        }
+                    }
+                    
+                    #posts-list-container{           
+                        ul.unordered-list-container{                           
+                            li.post-item{                           
+                                .the-post{                                                                     
+                                    .post-creator{                           
+                                        .creator-details{                                            
+                                            .creator-dp{
+                                                min-width:20%;                                                
+                                            }
+                                        }
+                                    }                       
+                                }                          
+                            }                       
                         }
                     }
                     
@@ -124,12 +140,9 @@
                 margin-top:0%;
 
                 //global post style
-                .post-container{
-                    width: 100%;
-                    box-shadow: none;
-                    border-radius: 0;
-                    ;
-                }
+                // .post-container{
+                    
+                // }
 
                 //homepage
                 #feed-posts{
@@ -140,9 +153,11 @@
                         margin-top: 8%;
 
                         #new-post-form{
-                            width: 90%;
+                            width: 97%;
                         }
                     }
+
+
                 }
 
                 //homepage links section

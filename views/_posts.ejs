@@ -1,29 +1,78 @@
-<li class="post-container">
-                        
-    <!-- delete button only vidisible to the creater of the post -->
-    <% if ((locals.user) && (locals.user.id == post.user.id)) { %>
-        <small>
-            <a href="/posts/destroy/<%= post.id %>">DELETE|POST</a>
-        </small>
-    <%}%>
+<link rel="stylesheet" href="/css/posts.css">
 
-    <!-- the post -->
-    <%= post.user.name %>
-    <br>
-    <%= post.content %>
-    <br>
-    <%= post.updatedAt %>
+<li class="post-container post-item">
+
+    <div class="the-post">
+        <div class="post-creator">
+            <div class="creator-details">
+                <div class="creator-dp">
+                    <span class="material-icons-outlined">
+                        face
+                        </span>
+                </div>
+
+                <div class="name-and-when">
+                    <%= post.user.name %>
+
+                    <div class="post-when">
+                        <!-- <%= post.updatedAt %> -->
+                        on 30 May 2021
+                    </div> 
+
+                </div>
+                
+            </div>
+
+            <div class="delete-button-container">
+                <!-- delete button only visisible to the creater of the post -->
+                <% if ((locals.user) && (locals.user.id == post.user.id)) { %>
+                    <a href="/posts/destroy/<%= post.id %>">
+                        <span class="material-icons-outlined">
+                            delete
+                            </span>
+
+                    </a>  
+                <%}%>
+            </div>
+        </div>
+
+        
+        <div class="post-content">
+            <p>
+                <%= post.content %>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- this part contains post comment button for now, like will be added later  -->
+    <div class="post-reacts">
+        <div class="react-comment">
+            <span class="material-icons-outlined">
+                chat_bubble_outline
+            </span>
+            &nbsp;Comment
+        </div>
+    </div>
 
     <!-- comment section -->
-    <div class="post-comments">
+    <div class="post-comments hidden-comments">
         <!-- make comment only if logged in -->
         <% if (locals.user) { %>
-            <form action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Type Here to Add Comment" required>
-                <input type="hidden" name="post" value="<%= post._id%>">
-                <input type="submit" value="Add Comment">
-            
-            </form>  
+            <div class="comment-maker">
+
+                <div class="creator-dp">
+                    <span class="material-icons-outlined">
+                        face
+                    </span>
+                </div>
+
+                <form action="/comments/create" method="POST" autocomplete="off">
+                    <input type="text" name="content" placeholder="Type Here to Add Comment" required>
+                    <input type="hidden" name="post" value="<%= post._id%>">    
+                </form> 
+            </div>
+             
         <%}%> 
 
         <!-- display comments -->
@@ -33,3 +82,6 @@
     
 
 </li>
+
+<!-- my javascript -->
+<script type="text/javascript" src="/js/post.js"></script>

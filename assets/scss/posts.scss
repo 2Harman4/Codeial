@@ -1,0 +1,169 @@
+li.post-item{
+    width: 100%;
+    list-style: none;
+    margin-bottom: 5%;  
+
+    //this part contains the post creater details and the post content
+    .the-post{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        border-bottom: 3px solid rgb(89, 147, 167);
+        margin-top: 2%;
+        // margin-bottom: 5%;
+             
+        .post-creator{
+            width: 100%;
+            background-color: #fca311;
+            border-bottom: 3px solid rgb(89, 147, 167);
+            border-top: 3px solid rgb(89, 147, 167);
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            
+
+            .creator-details{
+                width: 70%;
+                
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                
+                .creator-dp{
+                    min-height: 10vh;
+                    min-width:14%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+            
+                    .material-icons-outlined{
+                        font-size: 3rem;
+                    }
+                }
+
+                .name-and-when{
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 50%;
+
+                    //name size
+                    font-size: 1.5rem;
+
+                    .post-when{
+                        font-size: 1rem;
+                        color: rgba(0, 0, 0, 0.788);
+
+                    }
+                }
+            }
+
+            .delete-button-container{
+                min-width: 8%;
+                width: 8%;
+            }
+        }
+
+        .post-content{
+            width: 100%;
+            min-height: 20vh;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+
+
+            p{
+                width: 90%;
+                padding: 5%;
+                background-color: white;
+                font-size: 1.3rem;
+            }
+        }
+
+    }
+
+    //this is post-reacts section
+    .post-reacts{
+        width: 100%;
+        background-color: #fca311;
+        border-bottom: 3px solid rgb(89, 147, 167);
+        padding: 1% 0%;
+        margin-bottom: 2%;
+        font-size: 1rem;
+
+
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+
+        .react-comment{
+            width: 30%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .react-comment:hover{
+            cursor: pointer;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            
+        }
+    }
+
+    //contains comment maker and all comments
+    .post-comments{
+        width: 100%;
+        
+        .comment-maker{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1%;
+
+            .creator-dp{
+
+                min-width: 6%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                .material-icons-outlined{
+                    font-size: 2rem;
+                }
+            }
+            
+
+            form{
+                width: 88%;
+
+                input{
+                    width: 100%;
+                    padding: 2%;
+                    border-radius: 15px;
+                    border: none;
+                }
+
+                input:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    //make sure to put .hidden class after defining basic properites 
+    .hidden-comments{
+        display: none;
+        background-color: cadetblue;
+    }
+
+}
