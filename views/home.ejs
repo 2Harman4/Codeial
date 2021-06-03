@@ -17,7 +17,7 @@
             <div id="create-post" class="post-container">
                 <!-- form for input and submit post -->
                 <form action="/posts/create" id="new-post-form" method="POST">
-                    <textarea name="content" id=""  rows="2" placeholder="What's on your mind, <%= user.name %>?" required></textarea>
+                    <textarea name="content" id="new-post-form-textarea"  rows="2" placeholder="What's on your mind, <%= user.name %>?" required></textarea>
                     <input type="submit" value="POST">
                 </form>
             </div>
@@ -25,10 +25,10 @@
 
         <!-- watch posts -->
         <div id="posts-list-container">
-            <ul class="unordered-list-container">
+            <ul id="unordered-list-container">
                 <% for( post of posts){ %>
 
-                    <%- include('./_posts.ejs') %>
+                    <%- include('./_post.ejs') %>
                    
                 <%}%>
             </ul>
@@ -40,3 +40,5 @@
     <%- include('./_friends') %>
 
 </section>
+
+<script src="/js/home_posts.js"></script>
