@@ -2,17 +2,46 @@
 
 
         
-<li>  
-    <!-- delete button only visible to the creater of the comment and the creater of post -->
-    <% if ((locals.user) && ((locals.user.id == comment.user.id) || ( locals.user.id == post.user.id))) { %>
-        <small>
-            <a href="/comments/destroy/<%= comment.id %>">DELETE|Comment</a>
-        </small>
-    <%}%>  
+<li class="comment-list-element">  
 
-    <%= comment.content %>
+    <div class="the-comment">
+        
+        <div class="commentor-dp">
+            <span class="material-icons-outlined">
+                face
+                </span>
+        </div>
+
+        <div class="comment-content">
+            <div class="commentor-name">
+                <%= comment.user.name %>
+            </div>
+
+            <div class="comment-content">
+                <%= comment.content %>
+            </div>
+        </div>
+        
+
+    </div>
     
-    <%= comment.user.name %>
+
+    <!-- delete button only visible to the creater of the comment and the creater of post -->
+    <div class="delete-button-container">
+        <% if ((locals.user) && ((locals.user.id == comment.user.id) || ( locals.user.id == post.user.id))) { %>
+            
+            <a href="/comments/destroy/<%= comment.id %>">
+                <span class="material-icons-outlined ">
+                    delete
+                </span>
+            </a>
+            
+        <%}%>  
+    </div>
+
+  
+    
+    
 </li>
    
     

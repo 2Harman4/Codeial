@@ -1,0 +1,55 @@
+.comment-list-element{
+    width: 100%;
+    // background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2%;
+
+    .the-comment{
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+
+        .commentor-dp{
+
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 2%;
+    
+            .material-icons-outlined{
+                font-size: 2rem;
+            }
+        }
+
+        .comment-content{
+            width: 80%;
+            padding: 2%;
+            background-color: white;
+            border-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+
+            .commentor-name{
+                font-size: 1.3rem;
+                margin-bottom: 2%;
+                color: crimson;
+            }
+
+            .comment-content{
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .delete-button-container{
+        width: 8%;
+        
+        .material-icons-outlined{
+            font-size: 1.5rem;;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.comment-list-element {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2%; }
+  .comment-list-element .the-comment {
+    width: 70%;
+    display: flex;
+    flex-direction: row; }
+    .comment-list-element .the-comment .commentor-dp {
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 2%; }
+      .comment-list-element .the-comment .commentor-dp .material-icons-outlined {
+        font-size: 2rem; }
+    .comment-list-element .the-comment .comment-content {
+      width: 80%;
+      padding: 2%;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column; }
+      .comment-list-element .the-comment .comment-content .commentor-name {
+        font-size: 1.3rem;
+        margin-bottom: 2%;
+        color: crimson; }
+      .comment-list-element .the-comment .comment-content .comment-content {
+        font-size: 1.1rem; }
+  .comment-list-element .delete-button-container {
+    width: 8%; }
+    .comment-list-element .delete-button-container .material-icons-outlined {
+      font-size: 1.5rem; }

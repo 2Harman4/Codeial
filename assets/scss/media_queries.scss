@@ -72,19 +72,15 @@
 
                 //homepage
                 #feed-posts{
-                    //section displaying posts
-                    #posts-list-container{
-                        ul{
-                            li{
+
+                    width: 100%;
+                    padding: 0 10%;
+
+                    #posts-list-container{  
+                        #unordered-list-container{                           
+                            li.post-item{  
                                 margin-bottom: 8%;
-                                
-                            }
-                        }
-                    }
-                    
-                    #posts-list-container{           
-                        ul.unordered-list-container{                           
-                            li.post-item{                           
+
                                 .the-post{                                                                     
                                     .post-creator{                           
                                         .creator-details{                                            
@@ -92,13 +88,31 @@
                                                 min-width:20%;                                                
                                             }
                                         }
-                                    }                       
-                                }                          
+                                    }                                                              
+                                }
+
+                                .post-comments{
+                                    max-height: 45vh;
+                                    margin-top: 2%;
+                                
+                                }
+                                                          
                             }                       
                         }
                     }
                     
                 }
+
+                //homepage links section
+                #links{
+                    display: none;
+                }
+
+                //homepage friend-list section
+                #user-friends{
+                    display: none;
+                }
+                
             }
         }
     }
@@ -146,7 +160,7 @@
 
                 //homepage
                 #feed-posts{
-                    width: 100%;
+                    padding: 0%;
 
                     //create post div
                     #create-post{
@@ -157,18 +171,68 @@
                         }
                     }
 
+                    //posts - list viewer
+                    #posts-list-container{  
+                        #unordered-list-container{                       
+                            li.post-item{     
+                                .post-comments{
+                                    width: 95%;
+
+                                    .comment-maker{  
+                                        margin-bottom: 10%;                        
+                                        .creator-dp{ 
+
+                                            width: 10%;
+                                            justify-content: flex-start;
+
+                                            .material-icons-outlined{
+                                                font-size: 2.5rem;
+                                            }
+                                        }
+                                        form{
+                                            width: 85%;
+                            
+                                            input{
+                                                padding-left: 3%;
+                                            }
+                                        }
+                                    }
+
+                                    //container for ul of li ---comments
+                                    .post-comments-list{
+
+                                        .comments-ul{
+                                            .comment-list-element{
+                                                .the-comment{
+                                                    width: 80%;
+
+                                                    .commentor-dp{
+                                                
+                                                        .material-icons-outlined{
+                                                            font-size: 2.5rem;
+                                                        }
+                                                    }
+
+                                                    .comment-content{
+                                                        width: 90%;
+                                                        padding: 2%;
+                                                        margin-left: 2%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }                       
+                        }
+                    }
+
+
+
 
                 }
 
-                //homepage links section
-                #links{
-                    display: none;
-                }
-
-                //homepage friend-list section
-                #user-friends{
-                    display: none;
-                }
 
 
                 //profile page
