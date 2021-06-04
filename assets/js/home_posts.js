@@ -33,12 +33,16 @@
                     deletePost();
 
                     //setting newly created post for toggleComment functionality
-                    toggleComments();
+                    document.querySelector('#unordered-list-container .react-comment').addEventListener( 'click',function(e){
+            
+                        let commentButton = $(this);
+                        // comments will be visible when comment button is clicked
+                        let postComments =commentButton.parent().parent().children('.post-comments');
+                        postComments.toggleClass('hidden-comments');
+                    });
 
-                    //setting newly created posts for comment addition deletion functionality
-                    //not working from other file home_coments.js
-                    // createComment();
-                    // deleteComment();
+                    // call the create comment class
+                    new PostComments(data.data.post._id);
 
                     // noty
                     new Noty({
@@ -122,7 +126,7 @@
                     </span>
                 </div>
 
-                <form action="/comments/create" method="POST" autocomplete="off" class="create-comment-form">
+                <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST" autocomplete="off" class="create-comment-form">
                     <input type="text" name="content" placeholder="Type Here to Add Comment" required>
                     <input type="hidden" name="post" value="${post._id}">    
                 </form> 
@@ -207,7 +211,7 @@
         let togglers =  $(".react-comment");
         console.log("togglers:",togglers);
      
-        //try delegated event handler 
+       
         togglers.click(function(e){
             e.stopPropagation();
             
@@ -220,9 +224,22 @@
     }
 
 
+     // loop over all the existing posts on the page (when the window loads for the first time) and call the delete post method on delete link of each, also add AJAX (using the class we've created) to the delete button of each
+    let convertPostsToAjax = function(){
+        $('.post-item').each(function(){
+            let self = $(this);
+
+            // get the post's id by splitting the id attribute
+            let postId = self.prop('id').split("-")[1];
+            new PostComments(postId);
+        });
+    }
+
+
     //function calls
     createPost();
     deletePost();
     toggleComments();
+    convertPostsToAjax();
 
 }

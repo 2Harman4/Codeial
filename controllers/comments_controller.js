@@ -67,7 +67,7 @@ module.exports.destroy = async function(req,res){
 
             //AJAX
             if(req.xhr){
-                console.log('is xhr');
+                console.log('comment is xhr');
                 //return response in JSON format
                 return res.status(200).json({
                     data:{
@@ -77,8 +77,9 @@ module.exports.destroy = async function(req,res){
                 })
 
             }
-            req.flash('success','Comment Deleted!');
-            return res.redirect('back');
+            // console.log('deleted without ajax');
+            // req.flash('success','Comment Deleted!');
+            // return res.redirect('back');
                 
         }else{
             req.flash('error','Unauthorised Action');
