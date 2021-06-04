@@ -127,7 +127,7 @@
                 </div>
 
                 <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST" autocomplete="off" class="create-comment-form">
-                    <input type="text" name="content" placeholder="Type Here to Add Comment" required>
+                    <input type="text" name="content" placeholder="Type Here to Add Comment" class="comment-input-box" required>
                     <input type="hidden" name="post" value="${post._id}">    
                 </form> 
             </div>
