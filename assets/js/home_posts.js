@@ -1,5 +1,6 @@
-{
-
+{   
+    // import{ createComment , deleteComment } from './home_comments';
+    //  const createHome = require('./home_comments');
     
     //method to submit Form data for new post using AJAX
     let createPost =function(req,res){
@@ -9,6 +10,7 @@
         newPostForm.submit(function(e){
             //prevents submission via form
             e.preventDefault();
+            e.stopPropagation();
             
             $.ajax({
                 type: 'post',
@@ -16,7 +18,9 @@
                 //serealize converts form data to JSON (key-value)
                 data: newPostForm.serialize(),
                 success: function(data){
-                    
+
+                    console.log(data);
+
                     //forming DOM code to prepend in the ul
                     let newPost = newPostDom(data.data.post);
 
@@ -30,6 +34,11 @@
 
                     //setting newly created post for toggleComment functionality
                     toggleComments();
+
+                    //setting newly created posts for comment addition deletion functionality
+                    //not working from other file home_coments.js
+                    // createComment();
+                    // deleteComment();
 
                     // noty
                     new Noty({
@@ -113,7 +122,7 @@
                     </span>
                 </div>
 
-                <form action="/comments/create" method="POST" autocomplete="off">
+                <form action="/comments/create" method="POST" autocomplete="off" class="create-comment-form">
                     <input type="text" name="content" placeholder="Type Here to Add Comment" required>
                     <input type="hidden" name="post" value="${post._id}">    
                 </form> 
@@ -161,6 +170,7 @@
 
         $('.delete-post-button').click(function(e){
             e.preventDefault();
+            e.stopPropagation();
 
             let deleteButton = $(this);
             
@@ -194,24 +204,25 @@
 
     let toggleComments = function(){
         
-        let togglers =  $(document).find(".react-comment");
-
-        //delegated event handler
-        togglers.on( 'click',function(e){
+        let togglers =  $(".react-comment");
+        console.log("togglers:",togglers);
+     
+        //try delegated event handler 
+        togglers.click(function(e){
+            e.stopPropagation();
             
             let commentButton = $(this);
             // comments will be visible when comment button is clicked
             let postComments =commentButton.parent().parent().children('.post-comments');
             postComments.toggleClass('hidden-comments');
         });
-    
+        
     }
+
 
     //function calls
     createPost();
     deletePost();
     toggleComments();
-
-
 
 }

@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="/css/comments.css">
-
-
-        
-<li class="comment-list-element">  
+     
+<li class="comment-list-element" id="comment-<%= comment.id %>">  
 
     <div class="the-comment">
         
@@ -30,7 +28,7 @@
     <div class="delete-button-container">
         <% if ((locals.user) && ((locals.user.id == comment.user.id) || ( locals.user.id == post.user.id))) { %>
             
-            <a href="/comments/destroy/<%= comment.id %>">
+            <a href="/comments/destroy/<%= comment._id %>" class="delete-comment-button">
                 <span class="material-icons-outlined ">
                     delete
                 </span>
@@ -38,10 +36,7 @@
             
         <%}%>  
     </div>
-
-  
-    
-    
+   
 </li>
    
     

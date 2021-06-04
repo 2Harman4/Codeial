@@ -25,9 +25,6 @@ module.exports.create = async function(req,res){
             });
         }
 
-        // doesn't work right now
-        // req.flash('success','Post Created!');
-        // return res.redirect('back');
 
     }catch(err){
         req.flash('error',err);
