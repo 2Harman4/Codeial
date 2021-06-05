@@ -81,15 +81,15 @@
                             li.post-item{  
                                 margin-bottom: 8%;
 
-                                .the-post{                                                                     
-                                    .post-creator{                           
-                                        .creator-details{                                            
-                                            .creator-dp{
-                                                min-width:20%;                                                
-                                            }
-                                        }
-                                    }                                                              
-                                }
+                                // .the-post{                                                                     
+                                //     .post-creator{                           
+                                //         .creator-details{                                            
+                                //             .creator-dp{
+                                                                                                
+                                //             }
+                                //         }
+                                //     }                                                              
+                                // }
 
                                 .post-comments{
                                     max-height: 45vh;
@@ -114,8 +114,9 @@
                 }
 
                  //profile page
-                 #profile-section{
-                    max-width: 100%;
+                #profile-section{
+                    width: 100%;
+                    padding-top: 8%;
                 }
                 
             }
@@ -184,23 +185,23 @@
                                     width: 95%;
 
                                     .comment-maker{  
-                                        margin-bottom: 10%;                        
-                                        .creator-dp{ 
+                                        margin-bottom: 8%;                        
+                                        // .creator-dp{ 
 
-                                            width: 10%;
-                                            justify-content: flex-start;
+                                        //     width: 10%;
+                                        //     justify-content: flex-start;
 
-                                            .material-icons-outlined{
-                                                font-size: 2.5rem;
-                                            }
-                                        }
-                                        form{
-                                            width: 85%;
+                                        //     .material-icons-outlined{
+                                        //         font-size: 2.5rem;
+                                        //     }
+                                        // }
+                                        // form{
+                                        //     width: 85%;
                             
-                                            input{
-                                                padding-left: 3%;
-                                            }
-                                        }
+                                        //     input{
+                                        //         padding-left: 3%;
+                                        //     }
+                                        // }
                                     }
 
                                     //container for ul of li ---comments
@@ -240,7 +241,11 @@
 
 
 
-               
+                //profile page
+                #profile-section{
+                   
+                    padding-top: 10%;
+                }
 
             }
         }

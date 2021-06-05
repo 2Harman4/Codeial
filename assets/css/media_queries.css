@@ -33,8 +33,6 @@
       padding: 0 10%; }
       body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item {
         margin-bottom: 8%; }
-        body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .the-post .post-creator .creator-details .creator-dp {
-          min-width: 20%; }
         body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments {
           max-height: 45vh;
           margin-top: 2%; }
@@ -43,7 +41,8 @@
     body #layout-main .content-container #user-friends {
       display: none; }
     body #layout-main .content-container #profile-section {
-      max-width: 100%; } }
+      width: 100%;
+      padding-top: 8%; } }
 
 /* for large mobile screens or less ,----------------------------------*/
 @media only screen and (max-width: 530px) {
@@ -67,16 +66,7 @@
       body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments {
         width: 95%; }
         body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .comment-maker {
-          margin-bottom: 10%; }
-          body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .comment-maker .creator-dp {
-            width: 10%;
-            justify-content: flex-start; }
-            body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .comment-maker .creator-dp .material-icons-outlined {
-              font-size: 2.5rem; }
-          body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .comment-maker form {
-            width: 85%; }
-            body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .comment-maker form input {
-              padding-left: 3%; }
+          margin-bottom: 8%; }
         body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .post-comments-list .comments-ul .comment-list-element .the-comment {
           width: 80%; }
           body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .post-comments-list .comments-ul .comment-list-element .the-comment .commentor-dp .material-icons-outlined {
@@ -84,4 +74,6 @@
           body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .post-comments-list .comments-ul .comment-list-element .the-comment .comment-content {
             width: 90%;
             padding: 2%;
-            margin-left: 2%; } }
+            margin-left: 2%; }
+    body #layout-main .content-container #profile-section {
+      padding-top: 10%; } }

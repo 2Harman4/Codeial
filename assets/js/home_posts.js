@@ -19,10 +19,18 @@
                 data: newPostForm.serialize(),
                 success: function(data){
 
-                    console.log(data);
+                    let newPost;
 
-                    //forming DOM code to prepend in the ul
-                    let newPost = newPostDom(data.data.post);
+                    if(data.data.post.user.avatar){
+                        //forming DOM code when user has an AVATAR
+                        newPost = newPostDomAvatar(data.data.post);
+
+                    }else{
+                        //forming DOM code when user has no avatar
+                        newPost = newPostDom(data.data.post);
+                    }
+
+
 
                     $('#unordered-list-container').prepend(newPost);
 
@@ -62,7 +70,7 @@
         });
     }
 
-    //method to Create a post in DOM
+    //method to Create a post in DOM when user has NO avatar
     let newPostDom = function(post){
         return $(`<li class="post-container post-item" id="post-${post._id}">
 
@@ -70,9 +78,7 @@
             <div class="post-creator">
                 <div class="creator-details">
                     <div class="creator-dp">
-                        <span class="material-icons-outlined">
-                            face
-                            </span>
+                        <img src="/images/unknown.jpg" alt="${post.user.name}">
                     </div>
     
                     <div class="name-and-when">
@@ -121,9 +127,7 @@
             <div class="comment-maker">
 
                 <div class="creator-dp">
-                    <span class="material-icons-outlined">
-                        face
-                    </span>
+                     <img src="/images/unknown.jpg" alt="${post.user.name}">
                 </div>
 
                 <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST" autocomplete="off" class="create-comment-form">
@@ -145,28 +149,89 @@
     </li>`)
 
     }
-    
-    // coding ninjas method
-    // //method to  delete a newly created post from DOM
-    // let deletePost = function (deleteLink){
 
-    //     $(deleteLink).click(function(e){
-    //         e.preventDefault();
-            
-    //         //later do it AJAX type DELETE
-    //         $.ajax({
-    //             type:'get',
-    //             url: $(deleteLink).prop('href'),
-    //             success: function(data){
-    //                 console.log(data);
-    //                 $(`#post-${data.data.post_id}`).remove();
+     //method to Create a post in DOM when user has an AVATAR
+     let newPostDomAvatar = function(post){
+        return $(`<li class="post-container post-item" id="post-${post._id}">
+
+        <div class="the-post">
+            <div class="post-creator">
+                <div class="creator-details">
+                    <div class="creator-dp">
+                        <img src="${ post.user.avatar }" alt="${post.user.name }">
+                    </div>
+    
+                    <div class="name-and-when">
+                        ${post.user.name}
+    
+                        <div class="post-when">
+                            <!-- <%= post.updatedAt %> -->
+                            on 30 May 2021
+                        </div> 
+    
+                    </div>
                     
-    //             }, error: function(error){
-    //                 console.log(error.responseText);
-    //             }
-    //         });
-    //     });
-    // }
+                </div>
+    
+                <div class="delete-button-container">
+                    <a href="/posts/destroy/${post._id}" class="delete-post-button">
+                        <span class="material-icons-outlined ">
+                            delete
+                        </span>
+                    </a>     
+                </div>
+            </div>
+    
+            
+            <div class="post-content">
+                <p>
+                    ${post.content}
+                </p>
+            </div>
+    
+        </div>
+    
+        <!-- this part contains post comment button for now, like will be added later  -->
+        <div class="post-reacts">
+            <div class="react-comment">
+                <span class="material-icons-outlined">
+                    chat_bubble_outline
+                </span>
+                &nbsp;Comment
+            </div>
+        </div>
+    
+        <!-- comment section -->
+        <div class="post-comments hidden-comments">
+            
+            <div class="comment-maker">
+
+                <div class="creator-dp">
+                <img src="${ post.user.avatar }" alt="${post.user.name }">
+                </div>
+
+                <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST" autocomplete="off" class="create-comment-form">
+                    <input type="text" name="content" placeholder="Type Here to Add Comment" class="comment-input-box" required>
+                    <input type="hidden" name="post" value="${post._id}">    
+                </form> 
+            </div>
+    
+            <!-- display comments -->
+            <div class="post-comments-list">
+                <ul id="post-comments-${post._id}">
+                    
+                </ul>
+            </div>
+    
+        </div>
+        
+    
+    </li>`)
+
+    }
+
+
+
 
 // method to delete a post from DOM
    

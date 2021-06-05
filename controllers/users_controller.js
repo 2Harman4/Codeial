@@ -128,7 +128,7 @@ module.exports.create = function (req,res){
                     return;
                 }
                 //created 
-                req.flash('error','Account created successfully!');
+                req.flash('success','Account created successfully!');
                 return res.redirect('/users/sign-in');
                 
             });

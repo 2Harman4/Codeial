@@ -21,8 +21,8 @@ module.exports.create = async function(req,res){
         post.comments.push(comment);
         post.save();//the update saved to db from ram
 
-        //need to send comment with populated user name###############
-        let populatedComment = await Comment.findById(comment.id).populate('user','name');
+        //need to send comment with populated user name
+        let populatedComment = await Comment.findById(comment.id).populate({ path: 'user', select: { 'name':1,'avatar':1}});
 
         console.log('Populated Comment is: ',populatedComment);
 

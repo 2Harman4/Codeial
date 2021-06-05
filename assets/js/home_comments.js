@@ -33,7 +33,19 @@ class PostComments{
                 url: '/comments/create',
                 data: $(self).serialize(),
                 success: function(data){
-                    let newComment = pSelf.newCommentDom(data.data.comment);
+
+                    console.log('back in ajax comment:',data.data);
+                    let newComment;
+                    // if avatar is present
+                    if(data.data.comment.user.avatar){
+
+                        newComment = pSelf.newCommentDomAvatar(data.data.comment);
+
+                    }else {
+                        //avatar not present
+                        newComment = pSelf.newCommentDom(data.data.comment);
+                    }
+                    
                     $(`#post-comments-${postId}`).append(newComment);
                     pSelf.deleteComment($(' .delete-comment-button'));
 
@@ -57,16 +69,54 @@ class PostComments{
         });
     }
 
-    //method to create a Comment in Dom
+    //method to create a Comment in Dom when  Avatar is not present
     newCommentDom(comment){
         return (`<li class="comment-list-element" id="comment-${comment._id}">  
 
                 <div class="the-comment">
                     
                     <div class="commentor-dp">
-                        <span class="material-icons-outlined">
-                            face
-                            </span>
+                            <img src="/images/unknown.jpg" alt="${comment.user.name }">
+                    </div>
+            
+                    <div class="comment-content">
+                        <div class="commentor-name">
+                            ${ comment.user.name }
+                        </div>
+            
+                        <div class="comment-content">
+                        ${ comment.content }
+                        </div>
+                    </div>
+                    
+            
+                </div>
+                
+            
+                <!-- delete button only visible to the creater of the comment and the creater of post -->
+                <div class="delete-button-container">
+                        
+                    <a href="/comments/destroy/${ comment._id }" class="delete-comment-button">
+                        <span class="material-icons-outlined ">
+                            delete
+                        </span>
+                    </a>
+ 
+                </div>
+            
+            </li>`
+        );
+    }
+
+    //method to create a Comment in Dom when  Avatar is  present
+    newCommentDomAvatar(comment){
+        return (`<li class="comment-list-element" id="comment-${comment._id}">  
+
+                <div class="the-comment">
+                    
+                    <div class="commentor-dp">
+                        <img src="${comment.user.avatar }" alt="${ comment.user.name }">
+                      
                     </div>
             
                     <div class="comment-content">

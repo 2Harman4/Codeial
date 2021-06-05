@@ -11,7 +11,7 @@ module.exports.create = async function(req,res){
             user: req.user._id
         });
         
-        let postPopulated = await Post.findById(post.id).populate('user','name');
+        let postPopulated = await Post.findById(post.id).populate({ path: 'user', select: { 'name':1,'avatar':1}});
 
         //checking if the request is sent by AJAX
         if (req.xhr){

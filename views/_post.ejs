@@ -66,11 +66,11 @@
             <div class="comment-maker">
 
                 <div class="creator-dp">                   
-                    <% if (post.user.avatar){ %> 
-                        <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>">
+                    <% if (user.avatar){ %> 
+                        <img src="<%= user.avatar %>" alt="<%= user.name %>">
                     <%} else { %>
                         <!-- if the avatar isn't set by the user-- this images is shown by default -->
-                        <img src="/images/unknown.jpg" alt="<%= post.user.name %>">
+                        <img src="/images/unknown.jpg" alt="<%= user.name %>">
                     <%}%>
                 </div>
 
