@@ -29,6 +29,9 @@ app.use(cookieParser());
 //defining a path to lookout for static files
 app.use(express.static('./assets'));
 
+//defining route for browser to reach uploads folder
+app.use('/uploads',express.static(__dirname + '/uploads'));
+
 //including layouts library
 const expressLayouts = require('express-ejs-layouts');
 //layout should be implemented before any other view

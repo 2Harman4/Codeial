@@ -7,14 +7,26 @@
     
 
     <section id="profile-section">
-        <h1>  || Profile Page || </h1>
+        <!-- <h1>  || Profile Page || </h1> -->
+
+        <div id="user-avatar">
+
+            <% if (profile_user.avatar){ %> 
+                <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>">
+            <%} else { %>
+                <!-- if the avatar isn't set by the user-- this images is shown by default -->
+                <img src="/images/unknown.jpg" alt="<%= profile_user.name %>">
+            <%}%>
+        </div>
+        
     
 
         <% if (user.id == profile_user.id){ %>
             <!-- if user matches the form -->
-            <form action="/users/update/<%= profile_user.id %>" method="POST">
+            <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
                 <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name%>" required>
                 <input type="email" name="email" placeholder="Your Email" value="<%= profile_user.email%>" required>
+                <input type="file" name="avatar" placeholder="Profile Picture">
                 <input type="submit" value="Update">
             </form>
         

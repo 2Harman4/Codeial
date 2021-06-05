@@ -47,14 +47,20 @@ li.post-item{
                 align-items: center;
                 
                 .creator-dp{
-                    min-height: 10vh;
-                    min-width:14%;
+                    max-height: 50px;
+                    max-width: 50px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-            
-                    .material-icons-outlined{
-                        font-size: 3rem;
+                    overflow: hidden;
+
+                    border-radius: 50%;
+                    border: 2px solid white;
+                    margin: 2%;
+                   
+                    
+                    img{
+                        width: 100%;
                     }
                 }
 
@@ -145,14 +151,20 @@ li.post-item{
             margin-bottom: 5%;
 
             .creator-dp{
-
-                width: 6.5%;
+                max-height: 40px;
+                max-width: 40px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-        
-                .material-icons-outlined{
-                    font-size: 2rem;
+                overflow: hidden;
+
+                border-radius: 50%;
+                border: 2px solid white;
+                margin: 1.5%;
+               
+                
+                img{
+                    width: 100%;
                 }
             }
             

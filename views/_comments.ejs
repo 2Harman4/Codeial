@@ -5,9 +5,12 @@
     <div class="the-comment">
         
         <div class="commentor-dp">
-            <span class="material-icons-outlined">
-                face
-                </span>
+            <% if (comment.user.avatar){ %> 
+                <img src="<%= comment.user.avatar %>" alt="<%= comment.user.name %>">
+            <%} else { %>
+                <!-- if the avatar isn't set by the user-- this images is shown by default -->
+                <img src="/images/unknown.jpg" alt="<%= comment.user.name %>">
+            <%}%>
         </div>
 
         <div class="comment-content">

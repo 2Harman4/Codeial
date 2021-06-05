@@ -34,13 +34,17 @@ li.post-item {
         flex-direction: row;
         align-items: center; }
         li.post-item .the-post .post-creator .creator-details .creator-dp {
-          min-height: 10vh;
-          min-width: 14%;
+          max-height: 50px;
+          max-width: 50px;
           display: flex;
           justify-content: center;
-          align-items: center; }
-          li.post-item .the-post .post-creator .creator-details .creator-dp .material-icons-outlined {
-            font-size: 3rem; }
+          align-items: center;
+          overflow: hidden;
+          border-radius: 50%;
+          border: 2px solid white;
+          margin: 2%; }
+          li.post-item .the-post .post-creator .creator-details .creator-dp img {
+            width: 100%; }
         li.post-item .the-post .post-creator .creator-details .name-and-when {
           display: flex;
           flex-direction: column;
@@ -94,12 +98,17 @@ li.post-item {
       flex-direction: row;
       margin-bottom: 5%; }
       li.post-item .post-comments .comment-maker .creator-dp {
-        width: 6.5%;
+        max-height: 40px;
+        max-width: 40px;
         display: flex;
         justify-content: center;
-        align-items: center; }
-        li.post-item .post-comments .comment-maker .creator-dp .material-icons-outlined {
-          font-size: 2rem; }
+        align-items: center;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 2px solid white;
+        margin: 1.5%; }
+        li.post-item .post-comments .comment-maker .creator-dp img {
+          width: 100%; }
       li.post-item .post-comments .comment-maker form {
         width: 85%; }
         li.post-item .post-comments .comment-maker form input {

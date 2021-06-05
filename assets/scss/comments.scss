@@ -13,14 +13,20 @@
 
         .commentor-dp{
 
-            width: 10%;
+            max-height: 40px;
+            max-width: 40px;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding-top: 2%;
-    
-            .material-icons-outlined{
-                font-size: 2rem;
+            align-items: center;
+            overflow: hidden;
+
+            border-radius: 50%;
+            border: 2px solid white;
+            margin: 1.5%;
+           
+            
+            img{
+                width: 100%;
             }
         }
 

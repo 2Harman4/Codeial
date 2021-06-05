@@ -56,6 +56,7 @@ passport.checkAuthentication = function(req,res,next){
     }
 
     //if user isnt signed in
+    req.flash('error','Sign In to view the Profile');
     return res.redirect('/users/sign-in');
 }
 

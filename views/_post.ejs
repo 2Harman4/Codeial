@@ -6,9 +6,13 @@
         <div class="post-creator">
             <div class="creator-details">
                 <div class="creator-dp">
-                    <span class="material-icons-outlined">
-                        face
-                        </span>
+
+                    <% if (post.user.avatar){ %> 
+                        <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>">
+                    <%} else { %>
+                        <!-- if the avatar isn't set by the user-- this images is shown by default -->
+                        <img src="/images/unknown.jpg" alt="<%= post.user.name %>">
+                    <%}%>
                 </div>
 
                 <div class="name-and-when">
@@ -61,10 +65,13 @@
         <% if (locals.user) { %>
             <div class="comment-maker">
 
-                <div class="creator-dp">
-                    <span class="material-icons-outlined">
-                        face
-                    </span>
+                <div class="creator-dp">                   
+                    <% if (post.user.avatar){ %> 
+                        <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>">
+                    <%} else { %>
+                        <!-- if the avatar isn't set by the user-- this images is shown by default -->
+                        <img src="/images/unknown.jpg" alt="<%= post.user.name %>">
+                    <%}%>
                 </div>
 
                 <form action="/comments/create" method="POST" autocomplete="off" class="create-comment-form" id="post-<%= post._id %>-comments-form">

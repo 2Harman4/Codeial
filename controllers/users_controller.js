@@ -1,3 +1,7 @@
+//modules
+const fs = require('fs');
+const path = require('path');
+
 //importing model
 const User = require('../models/user');
 
@@ -13,14 +17,64 @@ module.exports.profile = function(req,res){
 };
 
 //update profile details
-module.exports.update = function(req,res){
+module.exports.update = async function(req,res){
     //preventing user to fidle with html code to change the id being sent for update 
+    // if(req.user.id == req.params.id){
+    //     User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
+    //         req.flash('success', "Profile Updation Successful");
+    //         return res.redirect('back');
+    //     });
+    // }else{
+    //     return res.status(401).send("Unauthorised");
+    // }
+
     if(req.user.id == req.params.id){
-        User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
-            req.flash('success', "Profile Updation Successful");
+
+        try{
+
+            let user = await User.findById(req.params.id);
+            User.uploadedAvatar(req,res,function(err){
+                if(err){
+                    console.log('**************Multer Error ',err);
+                }
+                
+                user.name = req.body.name;
+                user.email = req.body.email;
+
+                //if a user is uploading file
+                if (req.file){
+
+                    //if already an avatar is present- remove that
+                    if(user.avatar){
+
+                        let filePath = path.join(__dirname, '..' , user.avatar);
+
+                        //checking is the file is actually present id db
+                        if(fs.existsSync(filePath)){
+                            //now remove it
+                            fs.unlinkSync(filePath);
+                        }
+                        
+                    }
+
+                    //saving the path of uploaded file into avatar field for the user in db
+                    user.avatar = User.avatarPath + '/' + req.file.filename;
+
+                }
+                //till here changes were in ram only
+                //saving the changes
+                user.save();
+                req.flash('success', "Profile updated successfully");
+                return res.redirect('back');
+            });
+        }catch(err){
+            req.flash('error',err);
             return res.redirect('back');
-        });
+        }
+
+
     }else{
+        req.flash('error',"Unauthorized!");
         return res.status(401).send("Unauthorised");
     }
 }

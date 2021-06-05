@@ -41,7 +41,9 @@
     body #layout-main .content-container #links {
       display: none; }
     body #layout-main .content-container #user-friends {
-      display: none; } }
+      display: none; }
+    body #layout-main .content-container #profile-section {
+      max-width: 100%; } }
 
 /* for large mobile screens or less ,----------------------------------*/
 @media only screen and (max-width: 530px) {
@@ -82,6 +84,4 @@
           body #layout-main .content-container #feed-posts #posts-list-container #unordered-list-container li.post-item .post-comments .post-comments-list .comments-ul .comment-list-element .the-comment .comment-content {
             width: 90%;
             padding: 2%;
-            margin-left: 2%; }
-    body #layout-main .content-container #profile-section {
-      width: 100%; } }
+            margin-left: 2%; } }
