@@ -12,10 +12,11 @@ router.get('/',homeController.home);
 
 //acces to other routers
 router.use('/users',require('./users'));
-
 router.use('/posts',require('./posts'));
-
 router.use('/comments',require('./comments'));
+
+//defining api directory
+router.use('/api',require('./api'));
 
 //to enable its usage in other files probably server index.js
 module.exports = router;

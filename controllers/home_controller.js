@@ -5,14 +5,15 @@ module.exports.home = async function(req,res){
 
 
     try{
-
+        //getting all the posts from db
         let posts = await Post.find({})
         .sort({updatedAt:-1})
         .populate('user')// populating the user who made the post
         .populate({
             path: 'comments', //populating the comment
             populate: {
-                path: 'user' //populating the user who made this comment
+                path: 'user',//populating the user who made this comment
+                select: 'name avatar email'
             }
         });
         
