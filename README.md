@@ -1,2 +1,2 @@
-#CODEIAL
+# CODEIAL - ( a social media website )
 ## ONGOING DEVELOPMENT.........
